@@ -1,9 +1,8 @@
 const path              = require('path');
 const webpack           = require('webpack');
 const htmlPlugin        = require('html-webpack-plugin');
+const reactRoot         = require('html-webpack-react-root-plugin'); 
 const openBrowserPlugin = require('open-browser-webpack-plugin'); 
-const dashboardPlugin   = require('webpack-dashboard/plugin');
-const autoprefixer      = require('autoprefixer'); 
 
 const PATHS = {
   app: path.join(__dirname, 'src'),
@@ -13,19 +12,18 @@ const PATHS = {
 
 const options = {
   host:'localhost',
-  port:'1234'
+  port:'3000'
 };
 
 module.exports = {
   entry: {
-    app: PATHS.app
+    app: PATHS.app + '/index.jsx'
   },
   output: {
     path: PATHS.build,
-    filename: 'bundle.[hash].js'
+    filename: 'bundle.js'
   },
   devServer: {
-      historyApiFallback: true,
       hot: true,
       inline: true,
       stats: 'errors-only',
@@ -35,20 +33,15 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
+        test: /\.jsx$/,
+        exclude: /node_modules/,
         loader: 'babel',
-        query: {
-          cacheDirectory: true,
-          presets: ['es2015']
-        }
       },
       {
-        test: /\.css$/,
-        loaders: ['style', 'css', 'postcss'],
-        include:PATHS.app
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel',
       },
-      
       {
         test: /\.(ico|jpg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,        
         loader: 'file',
@@ -58,27 +51,14 @@ module.exports = {
       },      
     ]
   },
-  postcss: function() {
-    return [
-      autoprefixer({
-        browsers: [
-          '>1%',
-          'last 4 versions',
-          'Firefox ESR',
-          'not ie < 9',
-        ]
-      }),
-    ];
-  },
   plugins:[
-    new dashboardPlugin(),
     new webpack.HotModuleReplacementPlugin({
         multiStep: true
     }),
     new htmlPlugin({
-      template:path.join(PATHS.app,'index.html'),
-      inject:'body'
+      filename: 'index.html'
     }),
+    new reactRoot(),
     new openBrowserPlugin({
       url: `http://${options.host}:${options.port}`
     })
