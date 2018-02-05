@@ -33,6 +33,10 @@ module.exports = {
   module: {
     loaders: [
       {
+        test: /\.scss$/, 
+        loaders: ["style-loader", "css-loader", "sass-loader"]
+      },
+      {
         test: /\.jsx$/,
         exclude: /node_modules/,
         loader: 'babel',
@@ -50,6 +54,9 @@ module.exports = {
         }
       },      
     ]
+  },
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
   },
   plugins:[
     new webpack.HotModuleReplacementPlugin({

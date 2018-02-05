@@ -3,5 +3,12 @@ export const cuisines = {
     thai: 'thai', 
     indian: 'indian', 
     ethiopian: 'ethiopian',    
-    american: 'american' 
+    american: 'american',
+    cuban: 'cuban',
+
+
+    // types, make it plural  
+    sandwiches: 'sandwiches',
+    burgers: 'burgers', 
+    salads: 'salads'
 }

@@ -4,6 +4,7 @@ export const ingredients = {
     chicken: 'chicken', 
     turkey: 'turkey',
     egg: 'egg', 
+    pork: 'pork',
     
     // vegetables
     tomato: 'tomato',
@@ -11,5 +12,9 @@ export const ingredients = {
     potato: 'potato',
     
     // other
-    bread: 'bread'
+    bread: 'bread',
+
+    // condiments 
+    mustard: 'mustard', 
+    ketchup: 'ketchup'
 }
