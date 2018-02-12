@@ -1,8 +1,8 @@
 import React from 'react'; 
 import styled from 'styled-components'; 
 
-const NavLink = styled.a`
+const Subtitle = styled.h2`
     display: block; 
 `;
 
-export default NavLink; 
+export default Subtitle; 
