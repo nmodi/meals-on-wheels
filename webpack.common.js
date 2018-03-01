@@ -3,6 +3,7 @@ const webpack           = require('webpack');
 const htmlPlugin        = require('html-webpack-plugin');
 const reactRoot         = require('html-webpack-react-root-plugin'); 
 const openBrowserPlugin = require('open-browser-webpack-plugin'); 
+const dashboardPlugin   = require('webpack-dashboard/plugin'); 
 
 const PATHS = {
   app: path.join(__dirname, 'src'),
@@ -33,10 +34,6 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.scss$/, 
-        loaders: ["style-loader", "css-loader", "sass-loader"]
-      },
-      {
         test: /\.jsx$/,
         exclude: /node_modules/,
         loader: 'babel',
@@ -59,6 +56,7 @@ module.exports = {
     extensions: ['', '.js', '.jsx'],
   },
   plugins:[
+    new dashboardPlugin(), 
     new webpack.HotModuleReplacementPlugin({
         multiStep: true
     }),

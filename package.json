@@ -1,12 +1,14 @@
 {
   "name": "meals-on-wheels",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "",
   "main": "src/index.jsx",
   "scripts": {
-    "dev": "webpack-dev-server",
-    "prebuild": "rimraf dist",
-    "build": "webpack -p"
+    "dev": "webpack-dev-server --config webpack.dev.js",
+    "dashboard": "webpack-dashboard -- webpack-dev-server",
+    "build": "webpack -p --config webpack.prod.js",
+    "clean": "rimraf dist",
+    "start": "npm run clean && npm run build && node dist/server.js"
   },
   "repository": {
     "type": "git",
@@ -21,28 +23,27 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-react": "^6.24.1",
-    "css-loader": "^0.28.9",
     "file-loader": "0.9.0",
+    "filemanager-webpack-plugin": "^1.0.24",
     "html-loader": "0.4.4",
     "html-webpack-plugin": "2.24.0",
     "html-webpack-react-root-plugin": "^0.9.0",
-    "node-sass": "^4.7.2",
     "open-browser-webpack-plugin": "0.0.2",
-    "rimraf": "2.5.4",
-    "style-loader": "^0.20.1",
-    "webpack": "1.13.2",
+    "webpack-dashboard": "^1.1.1",
     "webpack-dev-server": "1.16.2"
   },
   "dependencies": {
-    "html-webpack-plugin": "^2.24.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-helmet": "^5.2.0",
     "react-redux": "^5.0.6",
-    "react-saga": "^0.2.6",
+    "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
-    "sass-loader": "^4.1.1",
+    "redux-saga": "^0.16.0",
+    "rimraf": "^2.6.2",
     "styled-components": "^3.0.2",
-    "webpack": "^1.3.0"
+    "uglifyjs-webpack-plugin": "^1.2.2",
+    "webpack": "1.13.2",
+    "webpack-merge": "^4.1.2"
   }
 }
