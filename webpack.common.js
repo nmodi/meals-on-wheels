@@ -1,36 +1,36 @@
 const path = require('path');
-const webpack = require('webpack');
+const webpack    = require('webpack');
 const htmlPlugin = require('html-webpack-plugin');
-const reactRoot = require('html-webpack-react-root-plugin');
+const reactRoot  = require('html-webpack-react-root-plugin');
 
 const PATHS = {
-  app: path.join(__dirname, 'src'),
+  app   : path.join(__dirname, 'src'),
   images: path.join(__dirname, 'src/assets/'),
-  build: path.join(__dirname, 'dist')
+  build : path.join(__dirname, 'dist')
 };
 
 module.exports = {
   entry: {
-    app: PATHS.app + '/index.jsx'
+    app: PATHS.app + '/index.js'
   },
   output: {
-    path: PATHS.build,
+    path    : PATHS.build,
     filename: 'bundle.js'
   },
   module: {
     loaders: [
       {
-        test: /\.jsx$/,
+        test   : /\.jsx$/,
         exclude: /node_modules/,
-        loader: 'babel'
+        loader : 'babel'
       }, {
-        test: /\.js$/,
+        test   : /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel'
+        loader : 'babel'
       }, {
-        test: /\.(ico|jpg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
+        test  : /\.(ico|jpg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
         loader: 'file',
-        query: {
+        query : {
           name: '[path][name].[ext]'
         }
       }
@@ -41,7 +41,7 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin({multiStep: true}),
-    new htmlPlugin({filename: 'index.html'}),
+    new htmlPlugin({title: 'Meals on Wheels', filename: 'index.html'}),
     new reactRoot()
   ]
 };

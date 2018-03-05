@@ -1,6 +1,6 @@
 const webpack = require('webpack');
-const merge = require('webpack-merge');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const merge             = require('webpack-merge');
+const UglifyJSPlugin    = require('uglifyjs-webpack-plugin');
 const fileManagerPlugin = require('filemanager-webpack-plugin');
 
 const common = require('./webpack.common.js');
@@ -16,8 +16,8 @@ module.exports = merge(common, {
       onEnd: {
         copy: [
           {
-            source: 'src/index.jsx',
-            destination: 'dist/index.jsx'
+            source     : 'src/server.js',
+            destination: 'dist/server.js'
           }
         ]
       }

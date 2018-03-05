@@ -1,13 +1,15 @@
 import React from 'react'; 
 import styled from 'styled-components'; 
 
-import Section from '../../common/components/Section';
-import Subtitle from '../../common/components/Subtitle';  
-import Button from '../../common/components/Button'; 
+import Section from '../../app/components/Section';
+import Subtitle from '../../app/components/Subtitle';  
+import Button from '../../app/components/Button'; 
+import StatusBar from '../../app/components/StatusBar'; 
 
 const MarketPage = props => {
     return (
         <Section>
+            <StatusBar/>
             <Subtitle>Farmer's Market</Subtitle>
             <p>For sale:</p> 
             <ul>
