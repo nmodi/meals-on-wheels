@@ -11,7 +11,7 @@ const PATHS = {
 
 module.exports = {
   entry: {
-    app: PATHS.app + '/index.js'
+    app: ['babel-polyfill', PATHS.app + '/index.js']
   },
   output: {
     path    : PATHS.build,
