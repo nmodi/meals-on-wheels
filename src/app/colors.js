@@ -1,9 +1,9 @@
 export default {
     white      : '#fff',
-    grayLighter: '#EBEDEE',
-    grayLight  : '#DEDFE0',
+    grayLighter: '#f9f9f9',
+    grayLight  : '#ededed',
     grayDark   : '#444',
-    grayDarker : '#222',
+    grayDarker : '#343030',
     blueLight  : '#2196F3',
     blue       : '#015699',
     blueDark   : '#104977',

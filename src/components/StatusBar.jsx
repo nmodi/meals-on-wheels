@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import colors from '../colors';
+import colors from '../app/colors';
 
 const Div = styled.div `
     border-bottom: 1px solid #333; 
     padding: 10px; 
-    margin: 0 0 25px;
-    background: ${colors.grayLight};  
+    margin: 65px 0 0;
+    background: ${colors.grayLight}; 
+    height: 45px; 
 `;
 
 const StatusBar = () => {

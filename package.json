@@ -8,7 +8,8 @@
     "dashboard": "webpack-dashboard -- webpack-dev-server",
     "build": "webpack -p --config webpack.prod.js",
     "clean": "rimraf dist",
-    "start": "npm run clean && npm run build && node dist/server.js"
+    "start": "npm run clean && npm run build && node dist/server.js",
+    "start-nobuild": "node dist/server.js"
   },
   "repository": {
     "type": "git",
@@ -18,13 +19,16 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "6.17.0",
     "babel-loader": "^6.2.5",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
     "file-loader": "0.9.0",
-    "filemanager-webpack-plugin": "^1.0.24",
+    "flow-bin": "^0.66.0",
     "html-loader": "0.4.4",
     "html-webpack-plugin": "2.24.0",
     "html-webpack-react-root-plugin": "^0.9.0",
@@ -35,13 +39,16 @@
     "webpack": "1.13.2",
     "webpack-dashboard": "^1.1.1",
     "webpack-dev-server": "1.16.2",
-    "webpack-merge": "^4.1.2"
+    "webpack-merge": "^4.1.2",
+    "wildcard-server-webpack-plugin": "^1.0.7"
   },
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
+    "react-tunnel": "^0.1.0",
+    "recompose": "^0.26.0",
     "redux": "^3.7.2",
     "redux-saga": "^0.16.0",
     "styled-components": "^3.0.2"

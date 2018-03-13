@@ -1,13 +1,17 @@
-import {call, put, takeLatest} from 'redux-saga/effects'; 
+import {call, put, takeEvery, select} from 'redux-saga/effects'; 
 
-import {types} from './appReducer';
+import {types, actions} from './appReducer';
+
 
 export default function* rootSaga() {
-    yield takeLatest(types.TICK, tickSaga); 
+    yield takeEvery(types.TICK, gameLoop); 
 };
 
-function* tickSaga(action) {
-    yield console.log('hello'); 
+function* gameLoop(action) {
+    // this is where we simulate the people 
+    yield put(actions.addMoney(1)); 
+    const state = yield select(); 
+    yield console.log(state.app.money); 
 }
 
 

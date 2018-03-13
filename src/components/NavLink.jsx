@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import {Link} from 'react-router-dom';
 
-import colors from '../colors';
+import colors from '../app/colors';
 
 const NavLink = styled(Link)`
     border-bottom: 2px solid transparent;

@@ -10,7 +10,7 @@ const options = {
 };
 
 module.exports = merge(common, {
-	devtool: 'inline-source-map',
+	devtool: 'inline-cheap-module-source-map',
 	devServer: {
 		hot: true,
 		inline: true,
