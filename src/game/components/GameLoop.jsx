@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import {connect} from 'react-redux';
-import {actions} from '../../app/appReducer';
+import {actions} from '../gameReducer';
 
 class GameLoop extends Component {
     constructor(props) {

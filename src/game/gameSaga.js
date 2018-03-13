@@ -1,7 +1,6 @@
 import {call, put, takeEvery, select} from 'redux-saga/effects'; 
 
-import {types, actions} from './appReducer';
-
+import {types, actions} from './gameReducer';
 
 export default function* rootSaga() {
     yield takeEvery(types.TICK, gameLoop); 
@@ -9,9 +8,8 @@ export default function* rootSaga() {
 
 function* gameLoop(action) {
     // this is where we simulate the people 
-    yield put(actions.addMoney(1)); 
-    const state = yield select(); 
-    yield console.log(state.app.money); 
+    let profit = yield(Math.floor(Math.random() * 6) - 1);
+    yield put(actions.addMoney(profit)); 
 }
 
 
