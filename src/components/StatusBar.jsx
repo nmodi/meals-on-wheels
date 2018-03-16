@@ -3,13 +3,11 @@ import styled from 'styled-components';
 
 import {connect} from 'react-redux';
 
-import colors from '../app/colors';
-
 const Div = styled.div`
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid ${props => props.theme.grayDark};
     padding: 10px;
     margin: 65px 0 0;
-    background: ${colors.grayLight};
+    background: ${props => props.theme.grayLight};
     height: 45px;
 `;
 
