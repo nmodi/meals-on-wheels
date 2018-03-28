@@ -10,14 +10,14 @@ const Link = styled(NavLink).attrs({
 })`
     border-bottom: 2px solid transparent;
     display: block;
-    color: ${props => props.theme.red};
+    color: ${props => props.theme.grayLighter};
     text-decoration: none;
     font-size: 20px;
     padding: 10px;
     font-weight: 600;
 
     &.active-nav-link {
-        border-bottom: 2px solid ${props => props.theme.red}; 
+        border-bottom: 2px solid ${props => props.theme.red};
     }
 
     &:focus,
@@ -29,11 +29,11 @@ const Link = styled(NavLink).attrs({
     }
 
     &:hover {
-        border-bottom: 2px solid ${props => props.theme.red};
+        background: ${props => props.theme.grayDark};
     }
 
     &:visited {
-        color: ${props => props.theme.red};
+        color: ${props => props.theme.grayLighter};
     }
 `;
 

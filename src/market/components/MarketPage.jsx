@@ -1,30 +1,40 @@
-import React from 'react'; 
-import styled from 'styled-components'; 
+import React from 'react';
+import styled from 'styled-components';
+
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 
 import Section from '../../components/Section';
-import Subtitle from '../../components/Subtitle';  
-import Button from '../../components/Button'; 
+import Subtitle from '../../components/Subtitle';
+import Button from '../../components/Button';
+
+import MarketListItem from './MarketListItem';
+
+import {actions} from '../marketReducer';
 
 const MarketPage = props => {
+    const ingredientListItems = props.ingredients.map(ingredient => {
+        return (
+            <MarketListItem
+                key={ingredient.name}
+                ingredient={ingredient}
+                onClick={() => props.dispatch(actions.buyIngredient(ingredient, 1))}
+            />
+        );
+    });
+
     return (
         <Section>
             <Subtitle>Farmer's Market</Subtitle>
-            <p>For sale:</p> 
-            <ul>
-                <li>Tomatoes <Button>Buy</Button></li>
-                <li>Beef <Button>Buy</Button></li>
-                <li>Carrots <Button>Buy</Button></li>
-            </ul>
-            <Section>
-                <Subtitle>Today's Specials</Subtitle> 
-                <ul>
-                    <li>Chicken <Button>Buy</Button></li>
-                    <li>Bread <Button>Buy</Button></li>
-                    <li>Eggs <Button>Buy</Button></li>
-                </ul>                
-            </Section> 
-        </Section> 
-    ); 
+            <ul>{ingredientListItems}</ul>
+        </Section>
+    );
+};
+
+const mapStateToProps = state => {
+    return ({
+        ingredients: state.market.ingredients
+    }); 
 }; 
 
-export default MarketPage; 
+export default connect(mapStateToProps)(MarketPage);
