@@ -20,6 +20,6 @@ module.exports = merge(common, {
 		historyApiFallback: true
 	},
 	plugins: [
-		new openBrowserPlugin({url: `http://${options.host}:${options.port}`})
+		// new openBrowserPlugin({url: `http://${options.host}:${options.port}`})
 	]
 });

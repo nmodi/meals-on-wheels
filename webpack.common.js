@@ -18,30 +18,32 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [
+    rules: [
       {
         test   : /\.jsx$/,
         exclude: /node_modules/,
-        loader : 'babel'
+        use : 'babel-loader'
       }, {
         test   : /\.js$/,
         exclude: /node_modules/,
-        loader : 'babel'
+        use : 'babel-loader'
       }, {
         test  : /\.(ico|jpg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
-        loader: 'file',
-        query : {
-          name: '[path][name].[ext]'
+        use: {
+          loader: 'file-loader',
+          options : {
+            name: '[path][name].[ext]'
+          }
         }
       }
     ]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['.js', '.jsx']
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin({multiStep: true}),
-    new htmlPlugin({title: 'Meals on Wheels', filename: 'index.html'}),
-    new reactRoot()
+    // new webpack.HotModuleReplacementPlugin({multiStep: true}),
+    // new htmlPlugin({title: 'Meals on Wheels', filename: 'index.html'}),
+    // new reactRoot()
   ]
 };
