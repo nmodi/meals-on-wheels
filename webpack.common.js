@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack    = require('webpack');
 const htmlPlugin = require('html-webpack-plugin');
-// const reactRoot  = require('html-webpack-react-root-plugin');
 
 const PATHS = {
   app   : path.join(__dirname, 'src'),

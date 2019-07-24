@@ -33,8 +33,7 @@
     "webpack": "^4.37.0",
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.7.2",
-    "webpack-merge": "^4.1.2",
-    "wildcard-server-webpack-plugin": "^1.0.7"
+    "webpack-merge": "^4.1.2"
   },
   "dependencies": {
     "react": "^16.8.6",
