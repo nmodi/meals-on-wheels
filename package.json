@@ -18,21 +18,20 @@
   "keywords": [],
   "author": "",
   "license": "MIT",
-  "devDependencies": {    
+  "devDependencies": {
     "@babel/core": "^7.5.5",
-    "@babel/preset-react": "^7.0.0",
     "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
     "babel-cli": "^6.26.0",
     "babel-loader": "^8.0.6",
     "babel-polyfill": "^6.26.0",
     "file-loader": "^4.1.0",
     "html-loader": "^0.5.5",
-    "html-webpack-plugin": "2.24.0",
-    "html-webpack-react-root-plugin": "^0.9.0",
+    "html-webpack-plugin": "^3.2.0",
     "open-browser-webpack-plugin": "0.0.5",
     "rimraf": "^2.6.2",
-    "uglifyjs-webpack-plugin": "^1.2.2",
     "webpack": "^4.37.0",
+    "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.7.2",
     "webpack-merge": "^4.1.2",
     "wildcard-server-webpack-plugin": "^1.0.7"
@@ -42,7 +41,6 @@
     "react-dom": "^16.8.6",
     "react-router-dom": "^4.2.2",
     "recompose": "^0.26.0",
-    "styled-components": "^3.0.2",
-    "webpack-cli": "^3.3.6"
+    "styled-components": "^3.0.2"
   }
 }

@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack    = require('webpack');
 const htmlPlugin = require('html-webpack-plugin');
-const reactRoot  = require('html-webpack-react-root-plugin');
+// const reactRoot  = require('html-webpack-react-root-plugin');
 
 const PATHS = {
   app   : path.join(__dirname, 'src'),
@@ -42,8 +42,8 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
   plugins: [
-    // new webpack.HotModuleReplacementPlugin({multiStep: true}),
-    // new htmlPlugin({title: 'Meals on Wheels', filename: 'index.html'}),
-    // new reactRoot()
+    new webpack.HotModuleReplacementPlugin({multiStep: true}),
+    // new reactRoot(),
+    new htmlPlugin({title: 'Meals on Wheels', filename: 'index.html'})
   ]
 };
