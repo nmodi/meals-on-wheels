@@ -1,6 +1,5 @@
 const merge = require('webpack-merge');
 const openBrowserPlugin = require('open-browser-webpack-plugin');
-const dashboardPlugin = require('webpack-dashboard/plugin');
 
 const common = require('./webpack.common.js');
 
@@ -21,7 +20,6 @@ module.exports = merge(common, {
 		historyApiFallback: true
 	},
 	plugins: [
-		new dashboardPlugin(),
 		new openBrowserPlugin({url: `http://${options.host}:${options.port}`})
 	]
 });
