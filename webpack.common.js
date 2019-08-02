@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 const htmlPlugin = require('html-webpack-plugin');
 
 const PATHS = {
@@ -19,6 +18,11 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.yaml$/,
+                exclude: /node_modules/,
+                use: 'js-yaml-loader'
+            },
+            {
                 test: /\.jsx$/,
                 exclude: /node_modules/,
                 use: 'babel-loader'
@@ -30,6 +34,7 @@ module.exports = {
             },
             {
                 test: /\.css$/i,
+                exclude: /node_modules/,
                 use: ['style-loader', 'css-loader']
             },
             {

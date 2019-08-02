@@ -1,0 +1,16 @@
+---
+- dilapidated:
+  name: Dilapidated Food Truck
+  id: dilapidated-truck
+  equipment-slots: 3
+  cost: 0
+- average:
+  name: Average Food Truck
+  id: average-truck
+  equipment-slots: 5
+  cost: 500
+- amazing:
+  name: Amazing Food Truck
+  id: amazing-truck
+  equipment-slots: 7
+  cost: 1500

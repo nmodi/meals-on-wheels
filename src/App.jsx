@@ -1,12 +1,16 @@
 import React from 'react';
 import styled, {ThemeProvider} from 'styled-components';
+import {Provider} from 'react-redux';
 import Helmet from 'react-helmet';
 
 import PageHeader from './components/PageHeader';
 import MyTruck from './components/MyTruck';
+import MyStats from './components/MyStats';
+
+import store from './state/configureStore'; 
 
 import './base.css';
-import MyStats from './components/MyStats';
+import AllTrucks from './components/AllTrucks';
 
 const Body = styled.main`
     display: flex;
@@ -20,20 +24,35 @@ const Main = styled.div`
     flex: auto;
 `;
 
+const theme = {
+    main: '#c6313a',
+    accent: '#f6da55',
+    info: '#f2d851',
+    default: '#999',
+    success: '#719551',
+    warning: '#ee8519',
+    danger: '#f44336'
+};
+
 const App = props => {
     return (
-        <div>
-            <Helmet>
-                <title>Street Eats</title>
-            </Helmet>
-            <Body>
-                <PageHeader />
-                <Main>
-                    <MyTruck />
-                    <MyStats />
-                </Main>
-            </Body>
-        </div>
+        <Provider store={store}>
+            <ThemeProvider theme={theme}>
+                <div>
+                    <Helmet>
+                        <title>Street Eats</title>
+                    </Helmet>
+                    <Body>
+                        <PageHeader />
+                        <Main>
+                            <MyTruck />
+                            <MyStats />
+                            <AllTrucks />
+                        </Main>
+                    </Body>
+                </div>
+            </ThemeProvider>
+        </Provider>
     );
 };
 

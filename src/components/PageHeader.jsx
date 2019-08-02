@@ -10,9 +10,9 @@ const Hh = styled.h1`
 `;
 
 const Header = styled.header`
-    color: #f6da55;
+    color: ${props => props.theme.accent};
     align-items: center;
-    background: #c6313a;
+    background: ${props => props.theme.main};
     height: 45px;
     display: flex;
 `;
