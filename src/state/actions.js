@@ -9,9 +9,9 @@ export function buyTruck(truck) {
     }
 }
 
-export function buyEquipment(equipment) {
+export function buyAppliance(appliance) {
     return {
         type: BUY_EQUIPMENT,
-        equipment
+        appliance
     }
 }

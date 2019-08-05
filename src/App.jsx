@@ -11,7 +11,7 @@ import store from './state/configureStore';
 
 import './base.css';
 import AllTrucks from './components/AllTrucks';
-import EquipmentForSale from './components/EquipmentForSale';
+import AppliancesForSale from './components/AppliancesForSale';
 
 const lightTheme = {
     main: '#c6313a',
@@ -84,7 +84,7 @@ const App = () => {
                             </div>
                             <div style={{flex: 2}}>
                                 <AllTrucks />
-                                <EquipmentForSale />
+                                <AppliancesForSale />
                             </div>
                             <div>
                                 <MyStats />

@@ -1,17 +1,17 @@
 import * as Actions from './actions';
 
-import applianceConfig from '../config/equipment.yaml';
+import applianceConfig from '../config/appliances.yaml';
 
 const initialState = {
     money: 1000,
     truck: {},
-    equipment: []
+    appliances: []
 };
 
 function truckReducer(state = initialState, action) {
     switch (action.type) {
         case Actions.BUY_EQUIPMENT: {
-            if (action.equipment.cost > state.money) {
+            if (action.appliance.cost > state.money) {
                 return state;
             } else {
                 // check for prereqs
@@ -20,8 +20,8 @@ function truckReducer(state = initialState, action) {
 
                 return {
                     ...state,
-                    money: state.money - action.equipment.cost,
-                    equipment: [...state.equipment, action.equipment]
+                    money: state.money - action.appliance.cost,
+                    appliance: [...state.appliance, action.appliance]
                 };
             }
         }
@@ -31,7 +31,7 @@ function truckReducer(state = initialState, action) {
                 return state;
             } else {
                 let truck = action.truck;
-                let appliances = state.equipment;
+                let appliances = state.appliance;
                 if (truck.appliances && truck.appliances.length > 0) {
                     
                     truck.appliances.map(applianceId => {
@@ -45,7 +45,7 @@ function truckReducer(state = initialState, action) {
                     ...state,
                     money: state.money - action.truck.cost,
                     truck: action.truck,
-                    equipment: appliances
+                    appliance: appliances
                 };
             }
         }

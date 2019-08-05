@@ -2,7 +2,7 @@
 dilapidated_truck:
     name: Dilapidated Food Truck
     id: dilapidated_truck
-    equipment-slots: 3
+    appliance-slots: 3
     cost: 0
     appliances: 
         - rusty_oven
@@ -13,11 +13,11 @@ dilapidated_truck:
 average_truck:
     name: Average Food Truck
     id: average_truck
-    equipment-slots: 5
+    appliance-slots: 5
     cost: 500
 
 amazing_truck: 
     name: Amazing Food Truck
     id: amazing_truck
-    equipment-slots: 7
+    appliance-slots: 7
     cost: 1500

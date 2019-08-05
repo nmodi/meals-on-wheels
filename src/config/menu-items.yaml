@@ -4,7 +4,7 @@
     tags:
         - sandwich
         - latino
-    equipmentNeeded:
+    applianceNeeded:
         - plancha
         - oven
     ingredients:
@@ -17,5 +17,5 @@
         - mexican
         - latino
         - taco
-    equipmentNeeded: []
+    applianceNeeded: []
     ingredients: []

@@ -31,7 +31,7 @@ const AllTrucks = () => {
             {trucksArray.map(truck => (
                 <Truck key={truck.id}>
                     <TruckProp>{truck.name}</TruckProp>
-                    <TruckProp>{truck['equipment-slots']} Slots</TruckProp>
+                    <TruckProp>{truck['appliance-slots']} Slots</TruckProp>
                     <TruckProp>${truck.cost}</TruckProp>
                     <Button onClick={() => dispatch(buyTruck(truck))}>Buy</Button>
                 </Truck>
