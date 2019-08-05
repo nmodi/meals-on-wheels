@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {connect, useSelector, useDispatch} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 
 import Card from './Card';
 import Button from './Button';
@@ -22,17 +22,13 @@ const TruckProp = styled.span`
 `;
 
 const AllTrucks = () => {
-
-    const money = useSelector(state => state.money); 
-    console.log(money); 
-    const truck = useSelector(state => state.truck); 
-    console.log(truck); 
     const dispatch = useDispatch(); 
+    const trucksArray = Object.keys(data).map(i => data[i]); 
 
     return (
         <Card>
             <h3>Trucks for Sale</h3>
-            {data.map(truck => (
+            {trucksArray.map(truck => (
                 <Truck key={truck.id}>
                     <TruckProp>{truck.name}</TruckProp>
                     <TruckProp>{truck['equipment-slots']} Slots</TruckProp>
@@ -44,4 +40,4 @@ const AllTrucks = () => {
     );
 };
 
-export default connect()(AllTrucks);
+export default AllTrucks;

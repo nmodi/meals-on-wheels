@@ -1,10 +1,30 @@
 ---
-- oven:
-  id: oven
-  cost: 10
-- blender:
-  id: blender
-  cost: 5
-- plancha:
-  id: plancha
-  cost: 5
+rusty_oven:
+    name: Rusty Oven
+    cost: 100
+    prereq: none
+    rating: 1
+
+electric_oven:
+    name: Electric Oven
+    cost: 100
+    prereq: rusty_oven
+    rating: 2
+
+rusty_fridge:
+    name: Rusty Fridge
+    cost: 500
+    prereq: none
+    rating: 1
+
+rusty_fryer:
+    name: Rusty Fryer
+    cost: 100
+    prereq: none
+    rating: 1
+
+rusty_griddle:
+    name: Rusty Griddle
+    cost: 100
+    prereq: none
+    rating: 1

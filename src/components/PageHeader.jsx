@@ -10,11 +10,13 @@ const Hh = styled.h1`
 `;
 
 const Header = styled.header`
-    color: ${props => props.theme.accent};
+    color: ${props => props.theme.main};
     align-items: center;
-    background: ${props => props.theme.main};
+    background: ${props => props.theme.card};
     height: 45px;
     display: flex;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.08);
+    border: 1px solid ${props => props.theme.greyAccent};
 `;
 
 const PageHeader = props => {
