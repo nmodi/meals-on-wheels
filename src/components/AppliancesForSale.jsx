@@ -7,7 +7,7 @@ import Button from './Button';
 
 import {buyAppliance} from '../state/actions';
 
-import data from '../config/appliances.yaml';
+import allAppliances from '../config/appliances.yaml';
 
 const ApplianceList = styled.div`
     display: flex;
@@ -26,15 +26,13 @@ const AppliancesForSale = () => {
     const truck = useSelector(state => state.truck);
     const ownedAppliances = useSelector(state => state.appliances);
 
-    const applianceArray = Object.keys(data).map(i => data[i]);
-
     return (
         <div>
             {truck.name && (
                 <Card>
                     <h3>Appliance for Sale</h3>
-                    {applianceArray.map(appliance => (
-                        <ApplianceList key={appliance.id}>
+                    {allAppliances.map(appliance => (
+                        <ApplianceList key={appliance.name}>
                             <ApplianceProp>{appliance.name}</ApplianceProp>
                             <ApplianceProp>${appliance.cost}</ApplianceProp>
                             <Button

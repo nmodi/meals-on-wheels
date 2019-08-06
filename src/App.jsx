@@ -6,44 +6,14 @@ import Helmet from 'react-helmet';
 import PageHeader from './components/PageHeader';
 import MyTruck from './components/MyTruck';
 import MyStats from './components/MyStats';
+import AllTrucks from './components/AllTrucks';
+import AppliancesForSale from './components/AppliancesForSale';
+import Button from './components/Button';
 
 import store from './state/configureStore';
 
 import './base.css';
-import AllTrucks from './components/AllTrucks';
-import AppliancesForSale from './components/AppliancesForSale';
-
-const lightTheme = {
-    main: '#c6313a',
-    accent: '#f6da55',
-    info: '#f2d851',
-    default: '#999',
-    success: '#719551',
-    warning: '#ee8519',
-    danger: '#f44336',
-
-    background: '#eaeaf2',
-    card: '#fff',
-    greyAccent: '#e5e6ea',
-    copy: '#181819'
-};
-
-const darkTheme = {
-    main: '#f6da55',
-    accent: '#c6313a',
-
-    info: '#f2d851',
-
-    default: '#999',
-    success: '#719551',
-    warning: '#ee8519',
-    danger: '#f44336',
-
-    background: '#181819',
-    card: '#242426',
-    greyAccent: '#3c3c3f',
-    copy: '#eaeaf2'
-};
+import themes from './themes';
 
 const Body = styled.main`
     display: flex;
@@ -61,16 +31,25 @@ const Main = styled.div`
 `;
 
 const GlobalStyle = createGlobalStyle`
-
     body {
         color: ${props => props.theme.copy};
     }
 `;
 
 const App = () => {
+    const [theme, setTheme] = React.useState(
+        localStorage.getItem('theme') || 'light'
+    );
+
+    React.useEffect(() => {
+        localStorage.setItem('theme', theme);
+    }, [theme]);
+
+    console.log(theme);
+
     return (
         <Provider store={store}>
-            <ThemeProvider theme={darkTheme}>
+            <ThemeProvider theme={themes[theme]}>
                 <div>
                     <GlobalStyle />
                     <Helmet>
@@ -88,6 +67,8 @@ const App = () => {
                             </div>
                             <div>
                                 <MyStats />
+                                <Button onClick={() => setTheme('light')}>Set light theme</Button>
+                                <Button onClick={() => setTheme('dark')}>Set dark theme</Button>
                             </div>
                         </Main>
                     </Body>

@@ -10,8 +10,8 @@ const ApplianceItem = styled.li`
     align-items: center;
 `;
 
-const MyTruck = props => {
-    let appliance = useSelector(state => state.appliance);
+const MyTruck = () => {
+    let appliances = useSelector(state => state.appliances);
     const truck = useSelector(state => state.truck);
 
     return (
@@ -19,10 +19,13 @@ const MyTruck = props => {
             <h3>My Food Truck</h3>
             <div>{truck.name ? truck.name : 'No truck'}</div>
             <ul>
-                {appliance.map(e => (
-                    <ApplianceItem key={e.id}>
-                        <span>{e.name}</span>
-                        <span>★☆☆☆☆</span>
+                {appliances.map(a => (
+                    <ApplianceItem key={a.name}>
+                        <span>{a.name}</span>
+                        <span>
+                            {[...Array(a.rating)].map(() => '★')}
+                            {[...Array(5 - a.rating)].map(() => '☆')}
+                        </span>
                     </ApplianceItem>
                 ))}
             </ul>
