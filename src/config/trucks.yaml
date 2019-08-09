@@ -4,11 +4,12 @@ dilapidated_truck:
     id: dilapidated_truck
     appliance-slots: 3
     cost: 0
-    appliances: 
-        - rusty_oven
-        - rusty_fridge
-        - rusty_griddle
-        - rusty_fryer
+    # appliances: 
+    #     - rusty_oven
+    #     - rusty_fridge
+    #     - rusty_griddle
+    #     - rusty_fryer
+    junkyard: true 
 
 average_truck:
     name: Average Food Truck

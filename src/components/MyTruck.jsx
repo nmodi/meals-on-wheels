@@ -14,6 +14,8 @@ const MyTruck = () => {
     let appliances = useSelector(state => state.appliances);
     const truck = useSelector(state => state.truck);
 
+    // TODO make a section to add/remove appliances from the truck 
+
     return (
         <Card>
             <h3>My Food Truck</h3>

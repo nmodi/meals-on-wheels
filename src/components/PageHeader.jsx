@@ -23,6 +23,7 @@ const PageHeader = props => {
     return (
         <Header>
             <Hh>Street Eats</Hh>
+            {/* TODO make a dropdown menu for settings */}
         </Header>
     );
 };

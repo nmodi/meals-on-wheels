@@ -5,7 +5,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import Card from './Card';
 import Button from './Button';
 
-import {buyTruck} from '../state/actions'; 
+import {buyTruck} from '../state/actions';
 
 import data from '../config/trucks.yaml';
 
@@ -22,18 +22,27 @@ const TruckProp = styled.span`
 `;
 
 const AllTrucks = () => {
-    const dispatch = useDispatch(); 
-    const trucksArray = Object.keys(data).map(i => data[i]); 
+    const trucksArray = Object.keys(data).map(i => data[i]);
+    const dispatch = useDispatch();
+    const truck = useSelector(state => state.truck);
+
+    const truckId = truck.id;
+    const unownedTrucks = trucksArray.filter(a => {
+        if (truckId != a.id) return a;
+    });
 
     return (
         <Card>
             <h3>Trucks for Sale</h3>
-            {trucksArray.map(truck => (
+            {/* TODO add message if all the trucks are sold */}
+            {unownedTrucks.map(truck => (
                 <Truck key={truck.id}>
                     <TruckProp>{truck.name}</TruckProp>
                     <TruckProp>{truck['appliance-slots']} Slots</TruckProp>
                     <TruckProp>${truck.cost}</TruckProp>
-                    <Button onClick={() => dispatch(buyTruck(truck))}>Buy</Button>
+                    <Button onClick={() => dispatch(buyTruck(truck))}>
+                        Buy
+                    </Button>
                 </Truck>
             ))}
         </Card>

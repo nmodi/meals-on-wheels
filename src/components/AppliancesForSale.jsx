@@ -24,14 +24,23 @@ const ApplianceProp = styled.span`
 const AppliancesForSale = () => {
     const dispatch = useDispatch();
     const truck = useSelector(state => state.truck);
+
     const ownedAppliances = useSelector(state => state.appliances);
+    let ownedAppIds = ownedAppliances.map(a => a.id);
+
+    const unownedAppliances = allAppliances.filter(a => {
+        if (!ownedAppIds.includes(a.id)) return a; 
+    }); 
+
+    // TODO filter out appliances without prereqs met
 
     return (
         <div>
             {truck.name && (
                 <Card>
                     <h3>Appliance for Sale</h3>
-                    {allAppliances.map(appliance => (
+                    {/* TODO add message if all the appliances are sold */}
+                    {unownedAppliances.map(appliance => (
                         <ApplianceList key={appliance.name}>
                             <ApplianceProp>{appliance.name}</ApplianceProp>
                             <ApplianceProp>${appliance.cost}</ApplianceProp>

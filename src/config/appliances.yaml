@@ -5,6 +5,7 @@
     prereq: []
     rating: 1
     type: oven
+    junkyard: true
 
 -   name: Electric Oven
     id: electric_oven
@@ -20,6 +21,7 @@
     prereq: []
     rating: 1
     type: fridge
+    junkyard: true
 
 -   name: Rusty Fryer
     id: rusty_fryer
@@ -27,6 +29,7 @@
     prereq: []
     rating: 1
     type: fryer
+    junkyard: true
 
 -   name: Rusty Griddle
     id: rusty_griddle
@@ -34,3 +37,4 @@
     prereq: []
     rating: 1
     type: griddle
+    junkyard: true

@@ -58,17 +58,22 @@ const App = () => {
                     <Body>
                         <PageHeader />
                         <Main>
-                            <div>
-                                <MyTruck />
-                            </div>
                             <div style={{flex: 2}}>
                                 <AllTrucks />
                                 <AppliancesForSale />
+                                {/* TODO make a component for adding recipes to your truck */}
                             </div>
-                            <div>
+                            <div style={{flex: 3}}>
+                                <MyTruck />
+                            </div>
+                            <div style={{flex: 2}}>
                                 <MyStats />
-                                <Button onClick={() => setTheme('light')}>Set light theme</Button>
-                                <Button onClick={() => setTheme('dark')}>Set dark theme</Button>
+                                <Button onClick={() => setTheme('light')}>
+                                    Set light theme
+                                </Button>
+                                <Button onClick={() => setTheme('dark')}>
+                                    Set dark theme
+                                </Button>
                             </div>
                         </Main>
                     </Body>
