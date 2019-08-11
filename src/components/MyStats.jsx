@@ -13,6 +13,8 @@ const StatItem = styled.li`
 
 const MyStats = props => {
     const money = useSelector(state => state.money);
+    const customers = useSelector(state => state.customersServed);
+    const reputation = useSelector(state => state.reputation);
 
     return (
         <Card>
@@ -24,11 +26,11 @@ const MyStats = props => {
                 </StatItem>
                 <StatItem>
                     <span>Reputation</span>
-                    <span>90%</span>
+                    <span>{reputation}%</span>
                 </StatItem>
                 <StatItem>
                     <span>Customers Served</span>
-                    <span>900</span>
+                    <span>{customers}</span>
                 </StatItem>
             </ul>
         </Card>

@@ -8,7 +8,6 @@ import MyTruck from './components/MyTruck';
 import MyStats from './components/MyStats';
 import AllTrucks from './components/AllTrucks';
 import AppliancesForSale from './components/AppliancesForSale';
-import Button from './components/Button';
 
 import store from './state/configureStore';
 
@@ -50,13 +49,13 @@ const App = () => {
     return (
         <Provider store={store}>
             <ThemeProvider theme={themes[theme]}>
-                <div>
+                <div style={{position: 'relative'}}>
                     <GlobalStyle />
                     <Helmet>
                         <title>Street Eats</title>
                     </Helmet>
                     <Body>
-                        <PageHeader />
+                        <PageHeader setTheme={setTheme} />
                         <Main>
                             <div style={{flex: 2}}>
                                 <AllTrucks />
@@ -68,12 +67,6 @@ const App = () => {
                             </div>
                             <div style={{flex: 2}}>
                                 <MyStats />
-                                <Button onClick={() => setTheme('light')}>
-                                    Set light theme
-                                </Button>
-                                <Button onClick={() => setTheme('dark')}>
-                                    Set dark theme
-                                </Button>
                             </div>
                         </Main>
                     </Body>

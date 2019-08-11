@@ -5,7 +5,9 @@ import appliancesData from '../config/appliances.yaml';
 const initialState = {
     money: 1000,
     truck: {},
-    appliances: []
+    appliances: [],
+    customersServed: 0,
+    reputation: 0
 };
 
 function truckReducer(state = initialState, action) {
