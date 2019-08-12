@@ -28,9 +28,11 @@ const AppliancesForSale = () => {
     const ownedAppliances = useSelector(state => state.appliances);
     let ownedAppIds = ownedAppliances.map(a => a.id);
 
-    const unownedAppliances = allAppliances.filter(a => {
-        if (!ownedAppIds.includes(a.id)) return a; 
-    }); 
+    const unownedAppliances = allAppliances
+        .filter(a => !a.junkyard)
+        .filter(a => {
+            if (!ownedAppIds.includes(a.id)) return a;
+        });
 
     // TODO filter out appliances without prereqs met
 

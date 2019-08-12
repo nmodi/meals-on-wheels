@@ -7,7 +7,8 @@ import Button from './Button';
 
 import {buyTruck} from '../state/actions';
 
-import data from '../config/trucks.yaml';
+import trucksRaw from '../config/trucks.yaml';
+const trucks = Object.keys(trucksRaw).map(i => trucksRaw[i]);
 
 const Truck = styled.div`
     display: flex;
@@ -22,14 +23,15 @@ const TruckProp = styled.span`
 `;
 
 const AllTrucks = () => {
-    const trucksArray = Object.keys(data).map(i => data[i]);
     const dispatch = useDispatch();
     const truck = useSelector(state => state.truck);
 
     const truckId = truck.id;
-    const unownedTrucks = trucksArray.filter(a => {
-        if (truckId != a.id) return a;
-    });
+    const unownedTrucks = trucks
+        .filter(a => !a.junkyard)
+        .filter(a => {
+            if (truckId != a.id) return a;
+        });
 
     return (
         <Card>
@@ -45,6 +47,7 @@ const AllTrucks = () => {
                     </Button>
                 </Truck>
             ))}
+            {!unownedTrucks.length && 'No trucks'}
         </Card>
     );
 };
