@@ -14,6 +14,7 @@ import store from './state/configureStore';
 import './base.css';
 import themes from './themes';
 import Junkyard from './components/Junkyard';
+import RecipeStore from './components/RecipeStore';
 
 const Body = styled.main`
     display: flex;
@@ -69,6 +70,7 @@ const App = () => {
                             </div>
                             <div style={{flex: 2}}>
                                 <MyStats />
+                                <RecipeStore />
                             </div>
                         </Main>
                     </Body>

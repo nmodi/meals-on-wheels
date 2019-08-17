@@ -11,7 +11,7 @@ const StatItem = styled.li`
     align-items: center;
 `;
 
-const MyStats = props => {
+const MyStats = () => {
     const money = useSelector(state => state.money);
     const customers = useSelector(state => state.customersServed);
     const reputation = useSelector(state => state.reputation);
@@ -31,6 +31,9 @@ const MyStats = props => {
                 <StatItem>
                     <span>Customers Served</span>
                     <span>{customers}</span>
+                </StatItem><StatItem>
+                    <span>Current City</span>
+                    <span>LA</span>
                 </StatItem>
             </ul>
         </Card>
